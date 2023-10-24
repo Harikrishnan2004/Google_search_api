@@ -1,0 +1,96 @@
+<style>
+    body{
+        background-color: rgb(16, 15, 24);
+        overflow-y: hidden;
+    }
+    .body{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        transform: translate(0, 50%);
+    }
+    h1{
+        color:aqua;
+    }
+    h3{
+        color: aliceblue;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: oblique;
+    }
+    .button-1{
+        background-color: transparent;
+        border: solid;
+        border-top-left-radius: 2em;
+        border-bottom-left-radius: 2em;
+        border-color: aqua;
+        color: white;
+        padding: 1em;
+    }
+    .button-2{
+        background-color: transparent;
+        color: white;
+        padding: 1em;
+        border: solid;
+    }
+    .button-3{
+        background-color: transparent;
+        border: solid;
+        border-top-right-radius: 2em;
+        border-bottom-right-radius: 2em;
+        border-color: aqua;
+        color: white;
+        padding: 1em;
+    }
+    .footer{
+        color: white;
+        transform: translate(0,100%);
+    }
+    button:hover{
+        background-color: aqua;
+        color: black;
+    }
+    @keyframes boxmove {
+        0%   {top: 0px; left: 0px; background-color: white; content:"choose"; color: black}
+        25%  {top: 0px; left: 95%; background-color: aqua; content: "one"; color: black}
+        50%  {top: 90%; left: 95%; background-color: white; content: "from"; color: black}
+        75%  {top: 90%; left: 0vh; background-color: aqua; content: "above"; color: black}
+        100% {top: 0px; left: 0vh; background-color: white; content: "four"; color: black}
+    }
+    .box{
+        width: 5em;
+        height: 5em;
+        position: relative;
+        background-color: rgb(6, 250, 250);
+        animation: boxmove 10s infinite ease-in-out;
+        text-align: center;
+        font: bold;
+        color: black;
+    }
+</style>
+</head>
+<body>
+    <div class="box" id="box">
+    </div>
+    <div class="body">
+    <div>
+        <h1>
+            Google search Engine API Implementation
+        </h1>
+        <h3>
+            Demo 
+        </h3>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'api:links' %}"><button class="button-1">Search for Links</button></a>
+        <a href="{% url 'api:images'%}"><button class="button-2">Search for Images</button></a>
+        <a href="{% url 'api:pdfs'%}"><button class="button-3">Search for PDFs</button></a> 
+    </div>
+    <div class="footer">
+        <p>&copy; 21MID0090 HARIKRISHNAN J</p>
+    </div>
+    </div>
+</body>
